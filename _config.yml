@@ -1,0 +1,9 @@
+headerTitle: Iqlusion Liquid Staking Working Group
+header_pages:
+  - index.md
+  - blog.md
+  - meeting-notes.md
+plugins:
+  - jekyll-inline-svg
+svg:
+  optimize: true

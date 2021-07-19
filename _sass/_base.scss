@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+$mobile: 600px !default;
+$tablet: 768px !default;
+$laptop: 992px !default;
+$desktop: 1440px !default;
+
+$bg-color: #010101;
+
+$button-transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  background: $bg-color;
+  color: #fff;
+  margin: 0;
+  min-height: 100vh;
+}
+
+@import "default";
+@import "home";

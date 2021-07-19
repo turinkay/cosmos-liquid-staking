@@ -1,0 +1,272 @@
+.header,
+.main-content {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $desktop;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  position: relative;
+
+  .label {
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: none;
+    opacity: 0.8;
+
+    &,
+    &:visited {
+      color: #fff;
+    }
+  }
+
+  #burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    width: 18px;
+    height: 14px;
+
+    .line {
+      width: 18px;
+      height: 2px;
+      background: #fff;
+      border-radius: 16px;
+      position: absolute;
+      left: 0;
+      transition: all 0.6s;
+
+      &.line-1 {
+        top: 0px;
+      }
+
+      &.line-2 {
+        top: 6px;
+      }
+
+      &.line-3 {
+        top: 12px;
+        left: unset;
+        right: 0;
+      }
+    }
+
+    .line-3 {
+      width: 12px;
+      margin-bottom: 0;
+    }
+
+    &.active {
+      .line-1 {
+        transform: translateY(6px) translateX(0) rotate(45deg);
+      }
+
+      .line-2 {
+        opacity: 0;
+      }
+
+      .line-3 {
+        transform: translateY(-6px) translateX(0) rotate(-45deg);
+        width: 18px;
+      }
+    }
+  }
+
+  .navigation {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    svg {
+      margin-right: 10px;
+    }
+
+    .label {
+      transition: all 200ms;
+      &:hover {
+        opacity: 1;
+      }
+
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+    }
+  }
+
+  #mobile-navigation {
+    display: none;
+    flex-direction: column;
+    z-index: 2;
+    position: fixed;
+    top: 59px;
+    left: 0;
+    background: $bg-color;
+    width: 100%;
+    height: 100%;
+    padding: 30px 20px;
+
+    &.visible {
+      display: flex;
+    }
+  }
+}
+
+.main-content {
+  margin-top: 70px;
+  padding: 0 100px;
+
+  .page-title,
+  .page-subtitle,
+  .page-text {
+    text-align: center;
+    width: 100%;
+  }
+
+  .page-text {
+    max-width: 830px;
+    margin: 0 auto;
+  }
+
+  .page-title {
+    max-width: 1030px;
+    margin: 16px auto 32px auto;
+    font-weight: 900;
+    font-size: 90px;
+    line-height: 109px;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, hsla(0, 0%, 100%, 0) 56%, #d4fcd3 98%),
+      linear-gradient(25deg, #fcd3d3 23%, #fff 60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .page-subtitle {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.5;
+  }
+}
+
+.button {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  padding: 21px 75px 21px 36px;
+  background: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: $button-transition;
+
+  &,
+  &:visited {
+    color: #000000;
+  }
+
+  &:after {
+    content: "\2192";
+    padding-left: 22px;
+    transition: $button-transition;
+    position: absolute;
+  }
+
+  &:hover,
+  &:focus {
+    &.secondary {
+      opacity: 0.8;
+    }
+  }
+
+  &:hover:after {
+    padding-left: 24px;
+  }
+
+  &.secondary {
+    background: transparent;
+    color: #fff;
+    padding: 21px 0;
+  }
+
+  &:first-child {
+    margin-right: 48px;
+  }
+}
+
+@include media-query($laptop) {
+  .header {
+    .navigation {
+      position: relative;
+      transform: unset;
+      left: unset;
+    }
+  }
+
+  .main-content {
+    .page-title {
+      font-size: 64px;
+      line-height: 77px;
+    }
+  }
+}
+
+@include media-query($tablet) {
+  .header,
+  .main-content {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .header {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    .navigation {
+      display: none;
+    }
+
+    #burger {
+      display: flex;
+    }
+  }
+
+  .main-content {
+    .page-title {
+      font-size: 64px;
+      line-height: 77px;
+    }
+  }
+}
+
+@include media-query($mobile) {
+  .header,
+  .main-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .main-content {
+    margin-top: 56px;
+
+    .page-title {
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    .page-text {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

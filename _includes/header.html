@@ -1,0 +1,36 @@
+<header class="header">
+  <span class="label">{{site.headerTitle}}</span>
+
+  <div class="navigation">
+    {% svg /assets/svg/search.svg %}
+    <span class="label">Search</span>
+
+    {%- for path in site.header_pages -%}
+    {%- assign my_page = site.pages | where: "path", path | first -%}
+    {%- if my_page.title -%}
+    <a class="label" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+    {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+
+  <div id="mobile-navigation">
+    <div class="search">
+      {% svg /assets/svg/search.svg %}
+      <span class="label">Search</span>
+    </div>
+
+    {%- for path in site.header_pages -%}
+    {%- assign my_page = site.pages | where: "path", path | first -%}
+    {%- if my_page.title -%}
+    <a class="button secondary" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+    {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <div id="burger">
+    <div class="line line-1"></div>
+    <div class="line line-2"></div>
+    <div class="line line-3"></div>
+  </div>
+</header>
