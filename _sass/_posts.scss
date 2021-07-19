@@ -1,0 +1,129 @@
+.posts {
+  margin-top: 32px;
+  display: grid;
+  row-gap: 32px;
+  column-gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 500px);
+  margin-bottom: 50px;
+
+  .post {
+    display: flex;
+    background: #181817;
+    flex-direction: column;
+    // height: 500px;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+
+    .image {
+      background-size: cover;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      flex: 1 1 47%;
+    }
+
+    .content {
+      flex: 1 1 53%;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .category {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 32px;
+        letter-spacing: 0.11em;
+        opacity: 0.5;
+        margin: 0;
+      }
+
+      .title {
+        margin: 16px 0;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+      }
+
+      .lead {
+        display: none;
+        font-size: 20px;
+        line-height: 32px;
+        opacity: 0.8;
+      }
+
+      .date {
+        font-size: 16px;
+        line-height: 26px;
+        opacity: 0.8;
+        margin: 0;
+      }
+    }
+
+    &:first-child {
+      flex-direction: row;
+      grid-column-start: 1;
+      grid-column-end: 3;
+
+      .image {
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 0;
+      }
+
+      .content {
+        .lead {
+          display: block;
+        }
+      }
+    }
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  @include media-query($laptop) {
+    row-gap: 24px;
+    column-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 430px);
+    .post {
+      .content {
+        .title {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+
+      &:first-child {
+        flex-direction: column;
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        .image {
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 20px;
+        }
+
+        .content {
+          .lead {
+            display: none;
+          }
+        }
+      }
+
+      &:last-child {
+        display: flex;
+      }
+    }
+  }
+
+  @include media-query($mobile) {
+    row-gap: 20px;
+    column-gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 430px);
+  }
+}

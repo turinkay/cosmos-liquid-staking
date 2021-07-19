@@ -1,0 +1,30 @@
+---
+layout: page
+title: Blog
+---
+
+<h2 class="page-subtitle">Blog</h2>
+<h1 class="page-title">What’s new</h1>
+<p class="page-text">
+  Aticles that are a result of the Iqlusion Liquid Staking working group
+  discussion will be posted here.
+</p>
+
+<div class="posts">
+  {% for post in paginator.posts %}
+  <a class="post" href="{{ post.url }}">
+    <div class="image" style="background-image: url({{post.image}})"></div>
+    <div class="content">
+      <div>
+        <p class="category">{{ post.category }}</p>
+        <h1 class="title">{{ post.title | strip_html | truncatewords:10 }}</h1>
+        <p class="lead">{{ post.content | strip_html | truncatewords:20 }}</p>
+      </div>
+
+
+      <p class="date">{{ post.date | date_to_long_string }}</p>
+
+    </div>
+  </a>
+  {% endfor %}
+</div>
