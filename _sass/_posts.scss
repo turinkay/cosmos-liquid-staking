@@ -1,17 +1,15 @@
 .posts {
-  margin-top: 32px;
   display: grid;
   row-gap: 32px;
   column-gap: 32px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 500px);
+  grid-auto-rows: 500px;
   margin-bottom: 50px;
 
   .post {
     display: flex;
     background: #181817;
     flex-direction: column;
-    // height: 500px;
     border-radius: 20px;
     color: #fff;
     text-decoration: none;
@@ -24,7 +22,7 @@
     }
 
     .content {
-      flex: 1 1 53%;
+      flex: 0 1 53%;
       padding: 32px;
       display: flex;
       flex-direction: column;
@@ -45,6 +43,10 @@
         font-weight: 700;
         font-size: 28px;
         line-height: 34px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
       }
 
       .lead {
@@ -78,17 +80,14 @@
         }
       }
     }
-
-    &:last-child {
-      display: none;
-    }
   }
 
   @include media-query($laptop) {
     row-gap: 24px;
     column-gap: 24px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 430px);
+    grid-auto-rows: 430px;
+
     .post {
       .content {
         .title {
@@ -113,10 +112,6 @@
           }
         }
       }
-
-      &:last-child {
-        display: flex;
-      }
     }
   }
 
@@ -124,6 +119,19 @@
     row-gap: 20px;
     column-gap: 0;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 430px);
+  }
+}
+
+.posts-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+
+  .button:first-child {
+    &:last-child {
+      margin-right: 0;
+    }
+    margin-right: 80px;
   }
 }

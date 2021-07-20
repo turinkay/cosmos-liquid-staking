@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Post 4
-category: news
+title: Post 6
+category: other
 image: /assets/img/image.png
 ---
 

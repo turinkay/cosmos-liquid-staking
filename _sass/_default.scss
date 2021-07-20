@@ -133,7 +133,7 @@
 
   .page-text {
     max-width: 830px;
-    margin: 0 auto;
+    margin: 0 auto 32px auto;
     opacity: 0.8;
   }
 
@@ -203,6 +203,24 @@
 
   &:first-child {
     margin-right: 48px;
+  }
+
+  &.arrow-bottom {
+    &:hover:after {
+      padding-left: 22px;
+    }
+    &:after {
+      content: "\2193";
+    }
+  }
+
+  &.arrow-top {
+    &:hover:after {
+      padding-left: 22px;
+    }
+    &:after {
+      content: "\2191";
+    }
   }
 }
 
