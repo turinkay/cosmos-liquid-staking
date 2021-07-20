@@ -31,8 +31,8 @@ The purposed of the Liquid Staking Working Group is a to design and implement th
 Join the telegram group and free the ATOMs for DeFi.
 
 {: .buttonGroup}
-[Telegram group](http://www.google.com){: .button.secondary}
-[Github Group](http://www.google.com){: .button.secondary}
+[Telegram group](http://www.google.com){: .button.secondary.arrow-top-right}
+[Github Group](http://www.google.com){: .button.secondary.arrow-top-right}
 {% contentfor agenda %}
 ### Agenda
 ## Upcoming Meetings

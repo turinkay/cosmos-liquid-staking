@@ -12,30 +12,15 @@ title: Blog
 
 <div class="posts">
   {% for post in paginator.posts %}
-  <a class="post" href="{{ post.url }}">
-
-    <div class="image" style="background-image: url({{post.image}})"></div>
-    <div class="content">
-      <div>
-        <p class="category">{{ post.category | default: "Post" }}</p>
-        <h1 class="title">{{ post.title | strip_html | truncatewords:10 }}</h1>
-        <p class="lead">{{ post.content | strip_html | truncatewords:20 }}</p>
-      </div>
-
-
-      <p class="date">{{ post.date | date_to_long_string }}</p>
-
-    </div>
-  </a>
+    {% include post-preview.html %}
   {% endfor %}
 </div>
 
-
 <div class="posts-nav">
   {% if paginator.previous_page_path %}
-  <a class="button secondary arrow-top" href="{{paginator.previous_page_path}}">Newer posts</a>
+    <a class="button secondary arrow-top" href="{{paginator.previous_page_path}}">Newer articles</a>
   {% endif %}
   {% if paginator.next_page_path %}
-  <a class="button secondary arrow-bottom" href="{{paginator.next_page_path}}">Older posts</a>
+    <a class="button secondary arrow-bottom" href="{{paginator.next_page_path}}">Older articles</a>
   {% endif %}
 </div>

@@ -129,21 +129,10 @@
 
     .buttonGroup {
       justify-content: flex-start;
+      flex-wrap: wrap;
 
-      .button {
-        &:first-child {
-          margin-right: 70px;
-        }
-
-        &:after {
-          transform: rotate(-45deg);
-          padding-bottom: 8px;
-          padding-right: 15px;
-        }
-
-        &:hover:after {
-          padding-left: 22px;
-        }
+      .button:first-child {
+        margin-right: 60px;
       }
     }
   }

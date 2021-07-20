@@ -159,6 +159,7 @@
     text-transform: uppercase;
     color: #ffffff;
     opacity: 0.5;
+    margin: 0;
   }
 }
 
@@ -166,7 +167,7 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 32px;
-  padding: 21px 75px 21px 36px;
+  padding: 21px 36px;
   background: #fff;
   border-radius: 10px;
   text-decoration: none;
@@ -181,18 +182,11 @@
     content: "\2192";
     padding-left: 22px;
     transition: $button-transition;
-    position: absolute;
   }
 
   &:hover,
   &:focus {
-    &.secondary {
-      opacity: 0.8;
-    }
-  }
-
-  &:hover:after {
-    padding-left: 24px;
+    opacity: 0.8;
   }
 
   &.secondary {
@@ -201,26 +195,16 @@
     padding: 21px 0;
   }
 
-  &:first-child {
-    margin-right: 48px;
+  &.arrow-bottom:after {
+    content: "\2193";
   }
 
-  &.arrow-bottom {
-    &:hover:after {
-      padding-left: 22px;
-    }
-    &:after {
-      content: "\2193";
-    }
+  &.arrow-top:after {
+    content: "\2191";
   }
 
-  &.arrow-top {
-    &:hover:after {
-      padding-left: 22px;
-    }
-    &:after {
-      content: "\2191";
-    }
+  &.arrow-top-right:after {
+    content: "\2197";
   }
 }
 
