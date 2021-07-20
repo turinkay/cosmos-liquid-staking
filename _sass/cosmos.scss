@@ -45,11 +45,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 @import "default";
 @import "home";
 @import "posts";
 @import "post";
-@import "post-preview";
-@import "other-posts";
+@import "post_preview";
+@import "other_posts";
+@import "meeting_note";
