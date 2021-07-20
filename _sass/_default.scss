@@ -3,8 +3,8 @@
   width: 100%;
   margin: 0 auto;
   max-width: $desktop;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .header {
@@ -123,17 +123,21 @@
 .main-content {
   margin-top: 70px;
   padding: 0 100px;
+  flex: 1;
 
   .page-title,
   .page-subtitle,
-  .page-text {
+  .page-lead {
     text-align: center;
     width: 100%;
   }
 
-  .page-text {
+  .page-lead {
     max-width: 830px;
     margin: 0 auto 32px auto;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
     opacity: 0.8;
   }
 
@@ -267,7 +271,7 @@
       line-height: 44px;
     }
 
-    .page-text {
+    .page-lead {
       font-size: 16px;
       line-height: 24px;
     }

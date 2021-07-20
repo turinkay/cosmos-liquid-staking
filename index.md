@@ -1,16 +1,9 @@
 ---
-title: Home
+title: Cosmos Liquid Staking Working Group
+subtitle: Welcome to Liquid Staking
+lead: The purposed of the Liquid Staking Working Group is a to design and implement the addition of a Liquid Staking system to the Cosmos SDK system for deployment on the Cosmos Hub in 2021.
 layout: home
 ---
-
-
-## Welcome to Liquid Staking
-{: .page-subtitle}
-# Cosmos Liquid Staking Working Group
-{: .page-title}
-
-The purposed of the Liquid Staking Working Group is a to design and implement the addition of a Liquid Staking system to the Cosmos SDK system for deployment on the Cosmos Hub in 2021.
-{: .page-text}
 
 {: .buttonGroup}
 [View it on GitHub](http://www.google.com){: .button}

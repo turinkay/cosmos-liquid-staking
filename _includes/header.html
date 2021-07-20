@@ -1,15 +1,12 @@
 <header class="header">
-  <span class="label">{{site.headerTitle}}</span>
+  <span class="label">{{ site.header_title }}</span>
 
   <div class="navigation">
     {% svg /assets/svg/search.svg %}
     <span class="label">Search</span>
 
-    {% for path in site.header_pages %}
-    {% assign my_page = site.pages | where: "path", path | first %}
-    {% if my_page.title %}
-    <a class="label" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-    {% endif %}
+    {% for nav_item in site.data.nav %}
+      <a class="label" href="{{ nav_item.url | relative_url }}">{{ nav_item.title | escape }}</a>
     {% endfor %}
   </div>
 
@@ -20,11 +17,8 @@
       <span class="label">Search</span>
     </div>
 
-    {% for path in site.header_pages %}
-    {% assign my_page = site.pages | where: "path", path | first %}
-    {% if my_page.title %}
-    <a class="button secondary" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-    {% endif %}
+    {% for nav_item in site.data.nav %}
+      <a class="button secondary" href="{{ nav_item.url | relative_url }}">{{ nav_item.title | escape }}</a>
     {% endfor %}
   </div>
 
