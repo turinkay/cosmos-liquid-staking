@@ -4,7 +4,6 @@
   column-gap: 32px;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: $post-preview-height-l;
-  margin-bottom: 50px;
 
   .post-preview:first-child {
     @include post-preview-horizontal;
@@ -47,7 +46,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 32px;
 
   .button:first-child {
     &:last-child {

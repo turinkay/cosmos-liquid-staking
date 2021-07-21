@@ -23,7 +23,7 @@
   }
 
   .bottom {
-    margin: 836px 0 100px 0;
+    margin-top: 836px;
     display: flex;
     justify-content: space-between;
 
@@ -94,6 +94,10 @@
         a:visited {
           color: #fff;
         }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -144,7 +148,7 @@
     }
 
     .bottom {
-      margin: 600px 0 60px 0;
+      margin-top: 600px;
       flex-direction: column;
 
       .left {
