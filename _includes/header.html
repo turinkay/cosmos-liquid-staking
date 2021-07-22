@@ -1,25 +1,15 @@
 <header id="header">
-  <span class="label">{{ site.header_title }}</span>
+  <span class="label site-name">{{ site.header_title }}</span>
 
   <div class="navigation">
-    {% svg /assets/svg/search.svg %}
-    <span class="label">Search</span>
-
-    {% for nav_item in site.data.nav %}
-      <a class="label" href="{{ nav_item.url | relative_url }}">{{ nav_item.title | escape }}</a>
-    {% endfor %}
-  </div>
-
-
-  <div id="mobile-navigation">
-    <div class="search">
-      {% svg /assets/svg/search.svg %}
-      <span class="label">Search</span>
+    {% include search-input.html %}
+    <div class="navigation-links">
+      {% for nav_item in site.data.nav %}
+      <a class="label" href="{{ nav_item.url | relative_url }}"
+        >{{ nav_item.title | escape }}</a
+      >
+      {% endfor %}
     </div>
-
-    {% for nav_item in site.data.nav %}
-      <a class="button secondary" href="{{ nav_item.url | relative_url }}">{{ nav_item.title | escape }}</a>
-    {% endfor %}
   </div>
 
   <div id="burger">

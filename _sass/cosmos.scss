@@ -7,7 +7,6 @@ $desktop: 1440px !default;
 
 $bg-color: #010101;
 
-$button-transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 $post-preview-height-l: 500px;
 $post-preview-height-m: 430px;
@@ -58,3 +57,5 @@ body {
 @import "post_preview";
 @import "other_posts";
 @import "meeting_note";
+@import "header";
+@import "search-input";

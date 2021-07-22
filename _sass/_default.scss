@@ -7,119 +7,6 @@
   padding-right: 100px;
 }
 
-#header {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  position: relative;
-
-  .label {
-    font-size: 12px;
-    line-height: 15px;
-    text-decoration: none;
-    opacity: 0.8;
-
-    &,
-    &:visited {
-      color: #fff;
-    }
-  }
-
-  #burger {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    align-items: flex-end;
-    position: relative;
-    width: 18px;
-    height: 14px;
-
-    .line {
-      width: 18px;
-      height: 2px;
-      background: #fff;
-      border-radius: 16px;
-      position: absolute;
-      left: 0;
-      transition: all 0.6s;
-
-      &.line-1 {
-        top: 0px;
-      }
-
-      &.line-2 {
-        top: 6px;
-      }
-
-      &.line-3 {
-        top: 12px;
-        left: unset;
-        right: 0;
-      }
-    }
-
-    .line-3 {
-      width: 12px;
-      margin-bottom: 0;
-    }
-
-    &.active {
-      .line-1 {
-        transform: translateY(6px) translateX(0) rotate(45deg);
-      }
-
-      .line-2 {
-        opacity: 0;
-      }
-
-      .line-3 {
-        transform: translateY(-6px) translateX(0) rotate(-45deg);
-        width: 18px;
-      }
-    }
-  }
-
-  .navigation {
-    display: flex;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
-    svg {
-      margin-right: 10px;
-    }
-
-    .label {
-      transition: all 200ms;
-      &:hover {
-        opacity: 1;
-      }
-
-      &:not(:last-child) {
-        margin-right: 32px;
-      }
-    }
-  }
-
-  #mobile-navigation {
-    display: none;
-    flex-direction: column;
-    z-index: 2;
-    position: fixed;
-    top: 59px;
-    left: 0;
-    background: $bg-color;
-    width: 100%;
-    height: 100%;
-    padding: 30px 20px;
-
-    &.visible {
-      display: flex;
-    }
-  }
-}
-
 .main-content {
   margin-top: 70px;
   margin-bottom: 60px;
@@ -176,7 +63,7 @@
   background: #fff;
   border-radius: 10px;
   text-decoration: none;
-  transition: $button-transition;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   &,
   &:visited {
@@ -186,7 +73,6 @@
   &:after {
     content: "\2192";
     padding-left: 22px;
-    transition: $button-transition;
   }
 
   &:hover,
@@ -214,14 +100,6 @@
 }
 
 @include media-query($laptop) {
-  #header {
-    .navigation {
-      position: relative;
-      transform: unset;
-      left: unset;
-    }
-  }
-
   .main-content {
     .page-title {
       font-size: 64px;
@@ -235,18 +113,6 @@
   .main-content {
     padding-left: 32px;
     padding-right: 32px;
-  }
-
-  #header {
-    padding-top: 22px;
-    padding-bottom: 22px;
-    .navigation {
-      display: none;
-    }
-
-    #burger {
-      display: flex;
-    }
   }
 
   .main-content {
