@@ -1,3 +1,5 @@
+domain: katamarinaki.github.io
+url: https://katamarinaki.github.io
 header_title: Iqlusion Liquid Staking Working Group
 plugins:
   - jekyll-paginate
