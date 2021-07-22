@@ -1,6 +1,5 @@
 domain: katamarinaki.github.io
 url: https://katamarinaki.github.io
-baseurl: /cosmos-liquid-staking/
 header_title: Iqlusion Liquid Staking Working Group
 plugins:
   - jekyll-paginate
@@ -22,7 +21,10 @@ defaults:
     values:
       with_other_posts: true
       layout: "post"
+
 exclude:
   - readme.md
   - vendor/bundle
   - home
+  - LICENSE.txt
+  - README.md
