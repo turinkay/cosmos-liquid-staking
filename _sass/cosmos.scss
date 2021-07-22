@@ -7,13 +7,70 @@ $desktop: 1440px !default;
 
 $bg-color: #010101;
 
-
 $post-preview-height-l: 500px;
 $post-preview-height-m: 430px;
 
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
+  }
+}
+
+@mixin post-styles {
+  a {
+    &,
+    &:visited {
+      color: #fff;
+    }
+  }
+
+  img {
+    border-radius: 20px;
+    margin: 32px 0;
+    width: 100%;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 32px;
+    margin: 16px 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 16px 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.4em;
+    line-height: 34px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  h4 {
+    font-size: 1em;
+  }
+
+  code {
+    font-size: 14px;
+  }
+
+  @include media-query($mobile) {
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 }
 
@@ -49,12 +106,6 @@ body {
   }
 }
 
-@import "default";
-@import "home";
 @import "posts";
-@import "post";
-@import "post_preview";
-@import "other_posts";
-@import "meeting_note";
-@import "header";
-@import "search";
+@import "includes/main";
+@import "layouts/main";

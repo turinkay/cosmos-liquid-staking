@@ -2,7 +2,11 @@
   <span class="label site-name">{{ site.title }}</span>
 
   <div class="navigation">
-    {% include search-input.html %}
+    <div class="search-input-wrapper">
+      <div class="search-icon"></div>
+      <input type="text" placeholder="Search" />
+      <div class="close-icon"></div>
+    </div>
     <div class="navigation-links">
       {% for nav_item in site.data.nav %}
       <a class="label" href="{{ nav_item.url | relative_url }}"
