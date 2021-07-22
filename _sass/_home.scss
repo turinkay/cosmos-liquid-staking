@@ -86,7 +86,7 @@
           width: 16px;
           height: 16px;
           top: -28px;
-          background-image: url("/assets/svg/plus.svg");
+          background-image: url($baseurl + "/assets/svg/plus.svg");
         }
 
         &,

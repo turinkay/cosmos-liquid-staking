@@ -1,7 +1,7 @@
 <a class="post-preview" href="{{ post.url }}">
 
   {% if post.image %}
-  <div class="image" style="background-image: url({{post.image}})"></div>
+  <div class="image" style="background-image: url({{post.image | relative_url}})"></div>
     {% endif %}
 
     <div class="content {% unless post.image %}without-image{% endunless %}">
