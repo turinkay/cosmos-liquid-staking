@@ -17,4 +17,10 @@ defaults:
       path: ""
       type: "meeting_notes"
     values:
-      layout: "post
+      layout: "post"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      with_other_posts: true
+      layout: "post"

@@ -14,5 +14,7 @@ layout: default
     {% endif %}
     {{ content }}
   </article>
-  {% include other-posts.html %}
+  {% if page.with_other_posts %}
+    {% include other-posts.html %}
+  {% endif %}
 </div>
