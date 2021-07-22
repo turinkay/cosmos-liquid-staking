@@ -29,5 +29,3 @@ exclude:
   - home
   - LICENSE.txt
   - README.md
-include:
-  - assets/js/vendor
