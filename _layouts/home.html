@@ -9,25 +9,14 @@ layout: page
   </div>
 
 
-  {% ifhascontent bottom %}
   <div class="bottom">
-    {% ifhascontent bottom-left %}
     <div class="left">
-      {% contentblock bottom-left %}
     </div>
-    {% endifhascontent %}
 
-    {% ifhascontent bottom-right %}
     <div class="right">
-      {% contentblock bottom-right %}
 
-      {% ifhascontent agenda %}
       <div class="agenda">
-        {% contentblock agenda %}
       </div>
-      {% endifhascontent %}
     </div>
-    {% endifhascontent %}
   </div>
-  {% endifhascontent %}
 </div>
