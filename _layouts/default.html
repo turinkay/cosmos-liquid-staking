@@ -11,6 +11,7 @@
 
     "{{forloop.index}}": {
       "title": "{{ post.title | xml_escape }}",
+      "category": "Blog",
       "content": {{ post.content | strip_html | strip_newlines | normalize_whitespace | jsonify }},
       "url": "{{ post.url | xml_escape }}"
     }
@@ -22,6 +23,7 @@
     {% for post in site.meeting_notes %}
     "1{{forloop.index}}": {
       "title": "{{ post.title | xml_escape }}",
+      "category": "Meeting notes",
       "content": {{ post.content | strip_html | strip_newlines | normalize_whitespace | jsonify }},
       "url": "{{ post.url | xml_escape }}"
     }
@@ -32,6 +34,7 @@
   </script>
 
   {% include header.html %}
+  <div id="search-results"></div>
   <main class="main-content" aria-label="Content">
     {{ content }}
   </main>

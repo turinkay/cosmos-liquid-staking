@@ -46,26 +46,21 @@
 
   @include media-query($laptop) {
     justify-content: flex-end;
-
-    .site-name {
-      transform: translateX(20px);
-    }
   }
 
   @include media-query($tablet) {
     padding-top: 22px;
     padding-bottom: 22px;
-    .navigation {
-      display: none;
-    }
 
     #burger {
       display: flex;
     }
-  }
 
-  @include media-query($mobile) {
-   .navigation {
+    .site-name {
+      transform: translateX(20px);
+    }
+
+    .navigation {
       display: none;
       flex-direction: column;
       z-index: 2;
@@ -81,7 +76,6 @@
       &.visible {
         display: flex;
       }
-
 
       .navigation-links {
         flex-direction: column;
@@ -99,7 +93,6 @@
             content: "\2192";
             padding-left: 22px;
           }
-
         }
       }
     }
@@ -159,5 +152,3 @@
     }
   }
 }
-
-

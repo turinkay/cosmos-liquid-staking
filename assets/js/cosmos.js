@@ -84,7 +84,6 @@
 
     function showSearch() {
       document.body.classList.add("search-active");
-      console.log('showSearch');
     }
 
     function hideSearch() {
@@ -144,7 +143,7 @@
         noResultsDiv.innerText = "No results found";
         searchResults.appendChild(noResultsDiv);
       } else {
-        const resultsList = document.createElement("ul");
+        const resultsList = document.createElement("div");
         resultsList.classList.add("search-results-list");
         searchResults.appendChild(resultsList);
 
@@ -183,42 +182,41 @@
       function addResult(resultsList, result) {
         const doc = searchDocs[result.ref];
 
-        const resultsListItem = document.createElement("li");
-        resultsListItem.classList.add("search-results-list-item");
+        const resultsListItem = document.createElement("a");
+        resultsListItem.classList.add("search-results-item");
         resultsList.appendChild(resultsListItem);
+        resultsListItem.setAttribute("href", doc.url);
 
-        const resultLink = document.createElement("a");
-        resultLink.classList.add("search-result");
-        resultLink.setAttribute("href", doc.url);
-        resultsListItem.appendChild(resultLink);
+        const resultCategory = document.createElement("div");
+        resultCategory.classList.add("category");
 
-        const resultTitle = document.createElement("div");
-        resultTitle.classList.add("search-result-title");
-        resultLink.appendChild(resultTitle);
+        const categoryIcon = document.createElement("div");
+        categoryIcon.classList.add("icon");
+        resultCategory.appendChild(categoryIcon);
 
-        const resultDoc = document.createElement("div");
-        resultDoc.classList.add("search-result-doc");
-        // resultDoc.innerHTML = '<svg viewBox="0 0 24 24" class="search-result-icon"><use xlink:href="#svg-doc"></use></svg>';
-        resultTitle.appendChild(resultDoc);
+        const categoryText = document.createElement("span");
+        categoryText.textContent = doc.category;
+        resultCategory.appendChild(categoryText);
 
-        resultDoc.classList.add("search-result-doc-parent");
-        const resultSection = document.createElement("div");
-        resultSection.classList.add("search-result-section");
-        resultSection.innerHTML = doc.title;
-        resultTitle.appendChild(resultSection);
-        resultDocOrSection = resultSection;
+        resultsListItem.appendChild(resultCategory);
+
+        const resultContent = document.createElement("div");
+        resultContent.classList.add("content");
+
+        const contentTitle = document.createElement("h1");
+        contentTitle.textContent = doc.title;
+        resultContent.appendChild(contentTitle);
+
+        const contentLink = document.createElement("span");
+        contentLink.textContent = doc.url;
+        resultContent.appendChild(contentLink);
+
+        resultsListItem.appendChild(resultContent);
 
         const metadata = result.matchData.metadata;
-        const titlePositions = [];
         const contentPositions = [];
         for (let j in metadata) {
           const meta = metadata[j];
-          if (meta.title) {
-            const positions = meta.title.position;
-            for (let k in positions) {
-              titlePositions.push(positions[k]);
-            }
-          }
           if (meta.content) {
             const positions = meta.content.position;
             for (let k in positions) {
@@ -268,20 +266,6 @@
           }
         }
 
-        if (titlePositions.length > 0) {
-          titlePositions.sort(function (p1, p2) {
-            return p1[0] - p2[0];
-          });
-          resultDocOrSection.innerHTML = "";
-          addHighlightedText(
-            resultDocOrSection,
-            doc.title,
-            0,
-            doc.title.length,
-            titlePositions
-          );
-        }
-
         if (contentPositions.length > 0) {
           contentPositions.sort(function (p1, p2) {
             return p1.highlight[0] - p2.highlight[0];
@@ -314,15 +298,15 @@
           }
 
           const resultPreviews = document.createElement("div");
-          resultPreviews.classList.add("search-result-previews");
-          resultLink.appendChild(resultPreviews);
+          resultPreviews.classList.add("match");
+          resultsListItem.appendChild(resultPreviews);
 
           const content = doc.content;
-          for (let j = 0; j < Math.min(previewPositions.length, 3); j++) {
+          for (let j = 0; j < Math.min(previewPositions.length, 1); j++) {
             const position = previewPositions[j];
 
             const resultPreview = document.createElement("div");
-            resultPreview.classList.add("search-result-preview");
+            resultPreview.classList.add("preview");
             resultPreviews.appendChild(resultPreview);
 
             if (position.ellipsesBefore) {
@@ -352,7 +336,7 @@
           parent.appendChild(span);
           index = position[0] + position[1];
           const highlight = document.createElement("span");
-          highlight.classList.add("search-result-highlight");
+          highlight.classList.add("highlight");
           highlight.innerHTML = text.substring(position[0], index);
           parent.appendChild(highlight);
         }
@@ -437,7 +421,11 @@
     });
 
     cosmos.addEvent(document, "click", function (e) {
-      if (e.target != searchInput) {
+      console.log(e.target);
+      const resultsList = document.querySelector(
+        "#search-results > .search-results-list"
+      );
+      if (e.target != searchInput && e.target != resultsList) {
         hideSearch();
       }
     });
