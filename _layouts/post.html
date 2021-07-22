@@ -10,7 +10,7 @@ layout: default
   </header>
   <article>
     {% if page.image %}
-    <img src="{{ page.image }}" class="image" />
+    <img src="{{ page.image | relative_url }}" class="image" />
     {% endif %}
     {{ content }}
   </article>

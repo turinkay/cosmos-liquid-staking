@@ -68,37 +68,10 @@
       }
     }
 
+    @include list-styles;
+
     ul {
-      list-style-type: none;
-      padding: 0;
-
-      li {
-        position: relative;
-        margin-bottom: 80px;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 32px;
-        color: #ffffff;
-
-        &:before {
-          content: " ";
-          position: absolute;
-          width: 16px;
-          height: 16px;
-          top: -28px;
-          background-image: url($baseurl + "/assets/svg/plus.svg");
-        }
-
-        &,
-        a,
-        a:visited {
-          color: #fff;
-        }
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
+      margin-top: 20px;
     }
 
     h1 {
