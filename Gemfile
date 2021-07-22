@@ -2,7 +2,6 @@ source "https://rubygems.org"
 
 group :jekyll_plugins do
   gem "github-pages", "~> 215"
-  gem 'jekyll-contentblocks'
   gem 'jekyll-paginate'
 end
 

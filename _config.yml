@@ -4,17 +4,12 @@ baseUrl: /cosmos-liquid-staking/
 header_title: Iqlusion Liquid Staking Working Group
 plugins:
   - jekyll-paginate
-  - jekyll-contentblocks
-svg:
-  optimize: true
-
 paginate: 5
 paginate_path: "/blog/page-:num/"
 collections:
   meeting_notes:
     output: true
     permalink: /meeting-notes/:title
-
 defaults:
   - scope:
       path: ""
@@ -27,3 +22,7 @@ defaults:
     values:
       with_other_posts: true
       layout: "post"
+exclude:
+  - readme.md
+  - vendor/bundle
+  - home
