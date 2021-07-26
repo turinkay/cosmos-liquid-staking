@@ -14,9 +14,9 @@ lead: Aticles that are a result of the Iqlusion Liquid Staking working group dis
 
 <div class="posts-nav">
   {% if paginator.previous_page_path %}
-    <a class="button secondary arrow-top" href="{{paginator.previous_page_path}}">Newer articles</a>
+    <a class="button secondary arrow-top" href="{{paginator.previous_page_path | relative_url}}">Newer articles</a>
   {% endif %}
   {% if paginator.next_page_path %}
-    <a class="button secondary arrow-bottom" href="{{paginator.next_page_path}}">Older articles</a>
+    <a class="button secondary arrow-bottom" href="{{paginator.next_page_path | relative_url}}">Older articles</a>
   {% endif %}
 </div>
