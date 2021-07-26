@@ -4,13 +4,24 @@
   justify-content: center;
   padding: 36px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
 
   p {
     font-size: 12px;
     line-height: 18px;
     text-align: center;
     font-weight: 400;
-    opacity: 0.5;
+
+    a {
+      &,
+      &:visited {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
   }
 
   @include media-query($mobile) {
