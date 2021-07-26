@@ -1,0 +1,19 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 36px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  p {
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: 400;
+    opacity: 0.5;
+  }
+
+  @include media-query($mobile) {
+    padding: 26px 0;
+  }
+}
