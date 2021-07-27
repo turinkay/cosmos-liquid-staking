@@ -2,7 +2,7 @@
 Join the telegram group and free the ATOMs for DeFi.
 
 {: .buttonGroup}
-[Telegram group](http://www.google.com){: .button.secondary.arrow-top-right}
-[Github Group](http://www.google.com){: .button.secondary.arrow-top-right}
+[Telegram group](https://t.me/joinchat/79l8Cmj5PAFlM2Uy){: .button.secondary.arrow-top-right}
+[Github Group](https://github.com/iqlusioninc/LiquidStakingWG){: .button.secondary.arrow-top-right}
 
 
